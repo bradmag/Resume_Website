@@ -1,1 +1,175 @@
 /* This will hold the CSS styling */
+
+/* GLOBAL STYLES */
+
+body {
+
+    padding: 10px 5px 20px 15px;
+
+    h1 {
+        color: rgb(200 100 0);
+        font-size: 3rem;
+    }
+
+    h2 {
+        color: rgb(200, 150, 0);
+        font-size: 2rem;
+    }
+
+    h3 {
+        color: rgb(200, 200, 0);
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        color: rgb(200, 130, 0);
+        font-size: 1rem;
+    }
+}
+
+/* BACKGROUND STYLES */
+.resume {
+    background: url(images/bg-home-office-studio.jpg) no-repeat;
+    background-size: cover;
+}
+
+.resume .content_wrapper {
+    background: rgb(255 255 255 / 0.7);
+}
+
+.cover_letter {
+    background: url(images/bg-home-office-studio.jpg) no-repeat;
+    background-size: cover
+}
+
+.cover_letter .content_wrapper {
+    background: rgb(225 225 225 / 0.7);
+}
+
+.projects {
+    background: url(images/bg-home-office-studio.jpg) no-repeat;
+    background-size: cover
+}
+
+.projects .content_wrapper {
+    background: rgb(225 225 225 / 0.7);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 200px;
+
+    /* HOME STYLES */
+    .resume {
+        background: url(images/bg-home-office-studio.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .resume .content_wrapper {
+        background: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+        width: 200px;
+        position: fixed;
+        top: 0;
+        left: -200px;
+        height: 100%;
+        background-color: #f4f4f4;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease;
+    }
+
+    .sidebar h1,
+    .sidebar h4,
+    .sidebar nav {
+        margin-bottom: 20px;
+    }
+
+    .sidebar a {
+        color: black;
+    }
+
+    .sidebar a:hover {
+        color: black;
+        text-decoration: none;
+        font-style: italic;
+    }
+
+    /* Content Wrapper Adjustment */
+    .content_wrapper {
+        transition: margin-left 0.3s ease;
+    }
+
+    .hover-area {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 100%;
+        z-index: 10;
+        background-color: transparent;
+    }
+
+    .hover-area:hover~.sidebar {
+        left: 0;
+    }
+
+    .hover-area:hover~.content_wrapper {
+        margin-left: 220px;
+    }
+
+    position: fixed;
+    top: 0;
+    left: -200px;
+    height: 100%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+}
+
+.sidebar h1,
+.sidebar h4,
+.sidebar nav {
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: rgb(0 0 0);
+}
+
+.sidebar a:hover {
+    color: rgb(0 0 0);
+    text-decoration: none;
+    font-style: italic;
+}
+
+/* Content Wrapper Adjustment */
+.content_wrapper {
+    margin-left: 20px;
+    /* Adjust this based on the width of your sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.hover-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    z-index: 10;
+    background-color: transparent;
+}
+
+.hover-area:hover+.sidebar {
+    left: 0;
+}
+
+.hover-area:hover~.content_wrapper {
+    margin-left: 20px;
+}
