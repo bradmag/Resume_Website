@@ -1,1 +1,82 @@
 /* This will hold the main recipe book page */
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Recipe Book</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="recipe_book">
+    <div class="content_wrapper">
+      <header id="top">
+        <h1>Bradley Magee</h1>
+        <h4>
+          <a href="mailto:magee.bradley30@gmail.com"
+            >magee.bradley30@gmail.com</a
+          >
+          <br />(303)653-1044
+        </h4>
+        <nav>
+          <ul>
+            <li><a href="../../index.html">Resume</a></li>
+            <li><a href="../../cover_letter.html">Cover Letter</a></li>
+            <li><a href="../../projects.html">Projects</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="top">
+        <h2>Recipe Book</h2>
+        <!-- Form to add a new recipe -->
+        <form id="recipeForm">
+          <label for="recipeName">Recipe Name:</label>
+          <input type="text" id="recipeName" name="recipeName" required />
+
+          <label for="process">Process:</label>
+          <textarea id="process" name="process" required></textarea>
+
+          <label for="ingredients">Ingredients (comma-separated):</label>
+          <input
+            type="text"
+            id="ingredients"
+            name="ingredients"
+            placeholder="e.g., onion, garlic, tomato"
+            required
+          />
+
+          <button type="submit">Add Recipe</button>
+        </form>
+
+        <section id="search">
+          <h2>Search for Recipes by Ingredient</h2>
+          <p>
+            Enter one or more ingredients (comma-separated) to find recipes.
+          </p>
+
+          <!-- Form to search for recipes -->
+          <form id="searchForm">
+            <label for="searchIngredients"
+              >Ingredients (comma-separated):</label
+            >
+            <input
+              type="text"
+              id="searchIngredients"
+              name="searchIngredients"
+              placeholder="e.g., onion, garlic, tomato"
+              required
+            />
+
+            <button type="submit">Search Recipes</button>
+          </form>
+
+          <div id="searchResults"></div>
+        </section>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
