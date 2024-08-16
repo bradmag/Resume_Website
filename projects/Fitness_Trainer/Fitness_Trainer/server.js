@@ -33,3 +33,7 @@ app.post('/register', (req, res) => {/* register a new user*/
         });
     });
 });
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
