@@ -1,1 +1,127 @@
 /* This will store the fitness html */
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Fitness Trainer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="fitness_trainer">
+    <div class="content_wrapper">
+      <header id="top">
+        <h1>Bradley Magee</h1>
+        <h4>
+          <a href="mailto:magee.bradley30@gmail.com"
+            >magee.bradley30@gmail.com</a
+          >
+          <br />(303)653-1044
+        </h4>
+        <nav>
+          <ul>
+            <li><a href="../../index.html">Resume</a></li>
+            <li><a href="../../cover_letter.html">Cover Letter</a></li>
+            <li><a href="../../projects.html">Projects</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="top">
+        <h2>Fitness Trainer</h2>
+        <!-- Form to add a new goal -->
+        <form id="goalForm">
+          <fieldset>
+            <legend>Your Goal</legend>
+            <label for="goalName">Name your goal:</label>
+            <input type="text" id="goalName" name="goalName" required />
+
+            <label for="goalDescription">Describe your goal:</label>
+            <input type="text" id="goalDescription" name="goalDescription" />
+          </fieldset>
+
+          <fieldset>
+            <legend>Goal Details</legend>
+            <label for="goalType">Type of Goal:</label>
+            <select id="goalType" name="goalType" required>
+              <option value="">Select</option>
+              <option value="lose_weight">Lose Weight</option>
+              <option value="gain_muscle">Gain Muscle</option>
+              <option value="train_for_event">Train for Event</option>
+            </select>
+
+            <label for="fitnessLevel">Current Fitness Level:</label>
+            <select id="fitnessLevel" name="fitnessLevel" required>
+              <option value="">Select</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+
+            <label for="timeCommitment">Time Commitment (days per week):</label>
+            <select id="timeCommitment" name="timeCommitment" required>
+              <option value="">Select</option>
+              <option value="3">3 days</option>
+              <option value="4">4 days</option>
+              <option value="5">5 days</option>
+              <option value="6">6 days</option>
+            </select>
+
+            <label for="workoutType">Preferred Workout Type:</label>
+            <select id="workoutType" name="workoutType" required>
+              <option value="">Select</option>
+              <option value="cardio">Cardio</option>
+              <option value="strength">Strength Training</option>
+              <option value="flexibility">Flexibility</option>
+              <option value="mixed">Mixed</option>
+            </select>
+
+            <label for="targetDate">Target Date:</label>
+            <input type="date" id="targetDate" name="targetDate" />
+          </fieldset>
+
+          <fieldset>
+            <legend>Additional Information</legend>
+            <label for="dietaryPreferences"
+              >Dietary Preferences (optional):</label
+            >
+            <select id="dietaryPreferences" name="dietaryPreferences">
+              <option value="">Select</option>
+              <option value="standard">Standard</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="keto">Keto</option>
+            </select>
+
+            <label for="medicalConsiderations"
+              >Medical Considerations (optional):</label
+            >
+            <input
+              type="text"
+              id="medicalConsiderations"
+              name="medicalConsiderations"
+            />
+
+            <label for="difficulty"
+              >What will be the most difficult part for you?</label
+            >
+            <select id="difficulty" name="difficulty" required>
+              <option value="">Select</option>
+              <option value="commitment">Commitment</option>
+              <option value="motivation">Motivation</option>
+              <option value="cardio">Cardio</option>
+              <option value="time_management">Time Management</option>
+              <option value="nutrition">Nutrition</option>
+              <option value="consistency">Consistency</option>
+            </select>
+          </fieldset>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
