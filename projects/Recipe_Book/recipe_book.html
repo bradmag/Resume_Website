@@ -30,22 +30,27 @@
 
       <section id="top">
         <h2>Recipe Book</h2>
+
         <!-- Form to add a new recipe -->
         <form id="recipeForm">
-          <label for="recipeName">Recipe Name:</label>
-          <input type="text" id="recipeName" name="recipeName" required />
+          <fieldset>
+            <legend>New Recipe</legend>
 
-          <label for="process">Process:</label>
-          <textarea id="process" name="process" required></textarea>
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" id="recipeName" name="recipeName" required />
 
-          <label for="ingredients">Ingredients (comma-separated):</label>
-          <input
-            type="text"
-            id="ingredients"
-            name="ingredients"
-            placeholder="e.g., onion, garlic, tomato"
-            required
-          />
+            <label for="process">Process:</label>
+            <textarea id="process" name="process" required></textarea>
+
+            <label for="ingredients">Ingredients (comma-separated):</label>
+            <input
+              type="text"
+              id="ingredients"
+              name="ingredients"
+              placeholder="e.g., onion, garlic, tomato"
+              required
+            />
+          </fieldset>
 
           <button type="submit">Add Recipe</button>
         </form>
@@ -58,16 +63,20 @@
 
           <!-- Form to search for recipes -->
           <form id="searchForm">
-            <label for="searchIngredients"
-              >Ingredients (comma-separated):</label
-            >
-            <input
-              type="text"
-              id="searchIngredients"
-              name="searchIngredients"
-              placeholder="e.g., onion, garlic, tomato"
-              required
-            />
+            <fieldset>
+              <legend>Search Recipes</legend>
+
+              <label for="searchIngredients"
+                >Ingredients (comma-separated):</label
+              >
+              <input
+                type="text"
+                id="searchIngredients"
+                name="searchIngredients"
+                placeholder="e.g., onion, garlic, tomato"
+                required
+              />
+            </fieldset>
 
             <button type="submit">Search Recipes</button>
           </form>
@@ -80,3 +89,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+
