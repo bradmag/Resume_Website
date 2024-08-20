@@ -1,5 +1,3 @@
-/* This will hold the server to interact with the recipe database */
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
@@ -126,7 +124,7 @@ app.get('/recipes/search', (req, res) => {
     // SQL query to find recipes that contain all the specified ingredients
     const placeholders = ingredients.map(() => '?').join(',');
     const sql = `
-        SELECT r.name, r.process
+        SELECT r.id, r.name, r.process, GROUP_CONCAT(i.name, ', ') as ingredients
         FROM recipes r
         JOIN recipe_ingredients ri ON r.id = ri.recipe_id
         JOIN ingredients i ON i.id = ri.ingredient_id
