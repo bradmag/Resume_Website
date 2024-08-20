@@ -1,5 +1,3 @@
-/* This will store the JavaScript functionality for the recipe book */
-
 document.addEventListener('DOMContentLoaded', function() {
     // Check if this is the Recipe Book page
     if (!document.body.classList.contains('recipe_book_page')) {
@@ -83,15 +81,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(data => {
                     console.log('Search Results:', data);
                     // Display search results
-                    searchResults.innerHTML = '<h3>Search Results:</h3>';
-                    if (data.data.length > 0) {
-                        const resultsList = document.createElement('ul');
+                    searchResults.innerHTML = ''; //Clear previous results
+                    if(data.data.length > 0) {
                         data.data.forEach(recipe => {
-                            const listItem = document.createElement('li');
-                            listItem.textContent = `${recipe.name}: ${recipe.process}`;
-                            resultsList.appendChild(listItem);
+                            const recipeCard = document.createElement('div');
+                            recipeCard.className = 'recipe-card'; 
+
+                            const recipeName = document.createElement('h3');
+                            recipeName.textContent = recipe.name;
+                            recipeCard.appendChild(recipeName);
+
+                            const recipeIngredients = document.createElement('p');
+                            recipeIngredients.innerHTML = `<strong>Ingredients:</strong> ${searchIngredients.join(', ')}`;
+                            recipeCard.appendChild(recipeIngredients);
+
+                            const recipeProcess = document.createElement('p');
+                            recipeProcess.innerHTML = `<strong>Process:</strong> ${recipe.process}`;
+                            recipeCard.appendChild(recipeProcess);
+
+                            searchResults.appendChild(recipeCard);
                         });
-                        searchResults.appendChild(resultsList);
+
                     } else {
                         searchResults.innerHTML += '<p>No recipes found for the given ingredients.</p>';
                     }
