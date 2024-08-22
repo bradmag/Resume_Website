@@ -16,3 +16,8 @@ I have three tables:
  - An Ingredient table with the Name and an ID
  - Then a recipe_ingredient table. This will have a column for recipe ID, Ingredient ID and quantity.
 The recipe_ingredient table will link the recipes with the ingredient, and quantity, needed. (ingredients can be used in multiple recipes so they should be stored in separate tables with another table to link them. 
+
+
+Status 8/22/24 (Before fall semester)
+ - I'm currently having difficulty with the SQL querries to pull up the entire recipe. When the user searches for a ingredient it's locating the proper recipes but I can't get it to include the other ingredients that are part of the recipe. It only includes the ingredients that are searched for. I need to do more research on how to fix this. 
+
