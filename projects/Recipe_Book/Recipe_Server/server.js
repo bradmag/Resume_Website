@@ -117,35 +117,71 @@ app.post('/recipes', (req, res) => {
     });
 });
 
-// API to search for recipes by multiple ingredients
-app.get('/recipes/search', (req, res) => {
-    const ingredients = req.query.ingredients.split(',').map(ingredient => ingredient.trim());
+/*
+API to search for recipes by one or more ingredients
+*/
+app.get("/recipes/search", (req, res) => {
+  //Read the ingredients from the API request, split, trim, and store in an array
+  const ingredients = req.query.ingredients
+    .split(",")
+    .map((ingredient) => ingredient.trim());
 
-    // SQL query to find recipes that contain all the specified ingredients
-    const placeholders = ingredients.map(() => '?').join(',');
-    const sql = `
-        SELECT r.id, r.name, r.process, GROUP_CONCAT(i.name, ', ') as ingredients
-        FROM recipes r
-        JOIN recipe_ingredients ri ON r.id = ri.recipe_id
-        JOIN ingredients i ON i.id = ri.ingredient_id
-        WHERE i.name IN (${placeholders})
-        GROUP BY r.id
-        HAVING COUNT(DISTINCT i.name) = ?
+  //If ingredients array is empty return error
+  if (ingredients.length === 0) {
+    return res.status(400).json({ error: "No ingredients provided" });
+  }
+  // Step 1: Get the IDs of the ingredients the user searched for
+  /*
+  Creates a string of placeholders ("?, ?, ?, ... ?") 
+  depending on how many ingredients are searched for
+  Then that string is used in the SQL statement
+  The SQL statement will search the ingredients table and 
+  return the id for the searched ingredients
+  */
+  const placeholders = ingredients.map(() => "?").join(",");
+  const findIngredientIdsSql = `
+        SELECT id FROM ingredients WHERE name IN (${placeholders}) 
     `;
+  // This runs the SQL query and returns an array of id's for the searched ingredients.
+  db.all(findIngredientIdsSql, ingredients, (err, ingredientIds) => {
+    if (err) {
+      return res.status(400).json({ error: err.message });
+    }
 
-    db.all(sql, [...ingredients, ingredients.length], (err, rows) => {
-        if (err) {
-            res.status(400).json({ "error": err.message });
-            return;
-        }
-        res.json({
-            "message": "success",
-            "data": rows
-        });
+    if (ingredientIds.length === 0) {
+      return res.json({ message: "No recipes found", data: [] });
+    }
+    /* 
+    Step 2: Get the recipe names associated with those ingredient IDs
+    The first line will extract the id values from the array
+    and store them in another array with just the id numbers ({id: 1} -> [1, 2, ...])
+    Then the SQL statement will return the names and id's of the 
+    recipes that include the searched ingredients
+    */
+    const ingredientIdsArray = ingredientIds.map((row) => row.id);
+    const findRecipeNamesSql = `
+            SELECT DISTINCT r.id, r.name
+            FROM recipes r
+            JOIN recipe_ingredients ri ON r.id = ri.recipe_id
+            WHERE ri.ingredient_id IN (${ingredientIdsArray
+              .map(() => "?")
+              .join(",")})
+        `;
+    // executes the SQL to search for recipe id's with the ingredient id's
+    db.all(findRecipeNamesSql, ingredientIdsArray, (err, recipes) => {
+      if (err) {
+        return res.status(400).json({ error: err.message });
+      }
+      res.json({
+        message: "success",
+        data: recipes,
+      });
     });
+  });
 });
-
+//
+//
 // Start the server
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
