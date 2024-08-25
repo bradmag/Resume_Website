@@ -11,3 +11,4 @@
 - Update styling
 - User can add more to recipes added (pictures, videos, Background pictures)
 - If cimplicated recipes contain ingredients that are also their own recipes, enable links. (bolognese has mirepoix as an ingredient)
+- Add Nutritional values
