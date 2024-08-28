@@ -16,5 +16,5 @@
 - If cimplicated recipes contain ingredients that are also their own recipes, enable links. (bolognese has mirepoix as an ingredient)
 - Add Nutritional values
   
-<img src="projects/Recipe_Book/images/SearchFlow.png" width="350" title="Search Flow">
+<img src="/projects/Recipe_Book/images/SearchFlow.png" alt="Auto-Completion with dot" width="850" title="Search Flow">
 
