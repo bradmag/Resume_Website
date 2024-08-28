@@ -15,7 +15,6 @@
 - User can add more to recipes added (pictures, videos, Background pictures)
 - If cimplicated recipes contain ingredients that are also their own recipes, enable links. (bolognese has mirepoix as an ingredient)
 - Add Nutritional values
+  
+<img src="projects/Recipe_Book/images/SearchFlow.png" width="350" title="Search Flow">
 
-<p align="center">
-  <img src="C:\Users\magee\OneDrive\Desktop\Programing\CSS\Resume_Website\projects\Recipe_Book\images\SearchFlow.png" width="350" title="Search Flow">
-</p>
