@@ -15,6 +15,10 @@
 - User can add more to recipes added (pictures, videos, Background pictures)
 - If cimplicated recipes contain ingredients that are also their own recipes, enable links. (bolognese has mirepoix as an ingredient)
 - Add Nutritional values
-  
-<img src="/projects/Recipe_Book/images/SearchFlow.png" alt="Auto-Completion with dot" width="850" title="Search Flow">
 
+### UI flow when someone searches for an ingredient
+<img src="/projects/Recipe_Book/images/uiFlow.png" alt="Auto-Completion with dot" width="850" title="Search Flow">
+### API functionality when the user searches for ingredients
+<img src="/projects/Recipe_Book/images/searchIngredient.png" alt="Auto-Completion with dot" width="850" title="Search Flow">
+### API functionality when the user clicks a recipe
+<img src="/projects/Recipe_Book/images/getRecipe.png" alt="Auto-Completion with dot" width="850" title="Search Flow">
