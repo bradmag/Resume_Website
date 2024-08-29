@@ -18,7 +18,9 @@
 
 ### UI flow when someone searches for an ingredient
 <img src="/projects/Recipe_Book/images/uiFlow.png" alt="Auto-Completion with dot" width="850" title="Search Flow">
+
 ### API functionality when the user searches for ingredients
 <img src="/projects/Recipe_Book/images/searchIngredient.png" alt="Auto-Completion with dot" width="850" title="Search Flow">
+
 ### API functionality when the user clicks a recipe
 <img src="/projects/Recipe_Book/images/getRecipe.png" alt="Auto-Completion with dot" width="850" title="Search Flow">
